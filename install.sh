@@ -14,3 +14,13 @@ git config --global core.editor vim
 git config --global user.email "$1"
 git config --global user.name "$2"
 
+#install base devel for aur
+sudo pacman -S --needed base-devel
+
+aurasnapshot='https://aur.archlinux.org/cgit/aur.git/snapshot/aura-bin.tar.gz'
+
+#install aura 
+curl -O ${aurasnapshot} && tar xfvz aura-bin.tar.gz && cd aura-bin && makepkg -s
+
+#install theme
+sudo aura -A zukitwo-themes
