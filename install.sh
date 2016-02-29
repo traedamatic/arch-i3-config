@@ -24,3 +24,7 @@ curl -O ${aurasnapshot} && tar xfvz aura-bin.tar.gz && cd aura-bin && makepkg -s
 
 #install theme
 sudo aura -A zukitwo-themes
+
+#install phpstorm
+sudo aura -A phpstorm
+
