@@ -1,3 +1,5 @@
+tarsnap
+cronie
 lxappearance
 curl
 ansible
@@ -51,7 +53,6 @@ keepassx
 nodejs
 npm
 nvm
-mongodb
 mongodb-tools
 alsa-lib
 alsa-plugins
@@ -65,5 +66,3 @@ skype
 wpa_supplicant
 lightdm
 lightdm-gtk-greeter
-php
-xdebug
