@@ -9,8 +9,8 @@ cp dotconfig/i3/config ~/.config/i3
 
 #install backup script
 sudo cp /tarsnap/tarsnap.conf /etc/tarsnap/tarsnap.conf
-sudo cp /tarsnap/tarsnap-backup-home.sh /root/tarsnap-backup-home.sh
-sudo ln -s /root/tarsnap-backup-home.sh /etc/cron.weekly/tarsnap-backup-home.sh
+sudo cp /tarsnap/tarsnap-backup-home.sh /etc/cron.weekly/tarsnap-backup-home
+sudo chmod 700 /etc/cron.weekly/tarsnap-backup-home
 
 echo "Please copy or create the tarsnap key in /root/tarsnap.kee"
 
