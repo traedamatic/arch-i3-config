@@ -5,7 +5,7 @@ name=$1
 email=$2
 
 #install i3 config
-cp i3/config ~/.config/i3
+cp dotconfig/i3/config ~/.config/i3
 
 #install backup script
 sudo cp /tarsnap/tarsnap.conf /etc/tarsnap/tarsnap.conf
