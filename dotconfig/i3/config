@@ -57,10 +57,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -118,8 +118,12 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# switching the keyboard language with shortcuts
 bindsym $mod+Shift+u exec "setxkbmap us"
 bindsym $mod+Shift+g exec "setxkbmap de"
+
+# keyboard shortcut for locking the screen
+bindsym $mod+Shift+l exec "i3lock"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
