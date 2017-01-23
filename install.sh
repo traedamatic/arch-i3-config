@@ -42,3 +42,5 @@ sudo aura -A phpstorm
 # start and enable cornie
 sudo systemctl start cronie
 sudo systemctl enable cronie
+
+sudo systemctl enable lightdm.service
