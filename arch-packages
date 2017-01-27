@@ -42,7 +42,7 @@ thunar-archive-plugin
 gvfs
 gvfs-mtp
 gvfs-smb
-keepassx
+keepassx2
 nodejs
 xorg-server
 arc-theme
@@ -59,3 +59,8 @@ chromium
 wpa_supplicant
 lightdm
 lightdm-gtk-greeter
+arandr
+dmenu
+arc-gtk-theme
+arc-icon-theme
+openssh
