@@ -1,15 +1,17 @@
+#!/bin/bash
+
 # set time
 timedatectl set-ntp true
 
-sgdisk -n 1:34:1050624 -t 1:ef00 /dev/sda
-sgdisk -n 2:1050625:500118158 -t 2:8e00 /dev/sda
+sgdisk -n 1:$(sgdisk -f /dev/sda):+512M -t 1:ef00 /dev/sda
+sgdisk -n 2:$(sgdisk -f /dev/sda):$(sgdisk -E /dev/sda) -t 2:8e00 /dev/sda
 sgdisk -p /dev/sda
 
 cryptsetup luksFormat /dev/sda2
 cryptsetup open /dev/sda2 cryptlvm
 
-pvcreate /dev/mapper/cryptolvm
-vgcreate TheDisk /dev/mapper/cryptolvm
+pvcreate /dev/mapper/cryptlvm
+vgcreate TheDisk /dev/mapper/cryptlvm
 
 lvcreate -L 8G TheDisk -n swap
 lvcreate -L 50G TheDisk -n root
