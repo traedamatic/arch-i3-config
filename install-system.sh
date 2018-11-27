@@ -1,11 +1,15 @@
 #!/bin/bash
-
+set -e 
 # set time
 timedatectl set-ntp true
+
+sgdisk -o /dev/sda
 
 sgdisk -n 1:$(sgdisk -f /dev/sda):+512M -t 1:ef00 /dev/sda
 sgdisk -n 2:$(sgdisk -f /dev/sda):$(sgdisk -E /dev/sda) -t 2:8e00 /dev/sda
 sgdisk -p /dev/sda
+
+mkfs.fat -F32 /dev/sda1
 
 cryptsetup luksFormat /dev/sda2
 cryptsetup open /dev/sda2 cryptlvm
@@ -37,6 +41,8 @@ pacstrap /mnt base base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
+
+# here should start a new script...
 
 ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
